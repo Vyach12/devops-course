@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  devops-course-postgres:
+    image: postgres:15
+    container_name: devops_course_postgres
+    environment:
+      POSTGRES_DB: "devops_course"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+    ports:
+      - "5432:5432"

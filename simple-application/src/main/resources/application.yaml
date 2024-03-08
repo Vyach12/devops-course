@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5437/devops_course
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+  docker:
+    compose:
+      enabled: true
+      file: classpath:/docker-compose.yaml
+  web:
+    resources:
+      add-mappings: false
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false

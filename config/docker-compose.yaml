@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  your-application:
+    build: ../simple-application
+    ports:
+      - "8080:8080"
