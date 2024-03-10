@@ -2,7 +2,10 @@ version: '3.9'
 
 services:
   simple-application:
-    image: vyach12/devops-course/simple-application:latest
+    container_name: simple-application-instance
+    build:
+      context: ../simple-application
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
