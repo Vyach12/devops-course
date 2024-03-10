@@ -16,7 +16,7 @@ public class SimpleRestAPI {
 
     @GetMapping("/hello")
     public ResponseEntity<?> hello() {
-        return ResponseEntity.ok("hello");
+        return ResponseEntity.ok("hello123");
     }
 
     @GetMapping("/users")

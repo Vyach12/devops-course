@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5437/devops_course
+    url: jdbc:postgresql://devops-course-postgres:5432/devops_course
     username: user
     password: password
     driver-class-name: org.postgresql.Driver
@@ -13,10 +13,6 @@ spring:
       ddl-auto: validate
   liquibase:
     change-log: classpath:/db/changelog.xml
-  docker:
-    compose:
-      enabled: true
-      file: classpath:/docker-compose.yaml
   web:
     resources:
       add-mappings: false

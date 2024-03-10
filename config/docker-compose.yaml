@@ -1,7 +1,24 @@
 version: '3.9'
 
 services:
-  your-application:
-    build: ../simple-application
+  simple-application:
+    image: vyach12/devops-course/simple-application:latest
     ports:
       - "8080:8080"
+    depends_on:
+      - devops-course-postgres
+
+  devops-course-postgres:
+    image: postgres:15
+    container_name: devops_course_postgres
+    environment:
+      POSTGRES_DB: "devops_course"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+    volumes:
+      - "db_data:/var/lib/devops-course-postgres"
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:
